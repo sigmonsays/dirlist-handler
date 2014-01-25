@@ -1,0 +1,38 @@
+dynamic directory listing
+------------------------------
+dirlist-handler
+
+This package renders a customizable directory listing using handlers registered using mime type information
+
+each core handler is listed below, and its dependancies
+
+----------------------------------------------------------------------------
+
+audio_mpeg					MP3 handler that embeds playable tracks in the page
+default						Default listing of files and directories
+directory					listing of directories
+image							cached thumbnailing, requires GD
+video							FLV transcoding only the fly and thumbnailing support
+								- cached thumbnailing achieved using mplayer
+								- FLV transcoding achieved using ffmpeg **
+
+
+jpeg_exif					shows jpeg exif information
+
+
+
+install
+
+----------------------------------------------------------------------------
+
+apt-get install smarty
+check include_path of .:/usr/share/php:/usr/share/pear at /dirlist-preview/phpinfo.php
+
+
+# Or do it yourself...
+
+wget http://www.smarty.net/files/Smarty-2.6.26.tar.gz
+tar vzxf Smarty-2.6.26.tar.gz 
+mv Smarty-2.6.26 Smarty
+
+chown www-data /data/development/dirlist-preview/templates_c
